@@ -36,6 +36,10 @@ Launch gaps: exact issuer reference capture; approved MIS snapshot/delta/blank/o
 
 ## Task-level evidence
 
+## F01.02a persistent request throttles
+
+Migration 003 and internal OtpRateLimits enforce atomic phone/IP/device rolling-window reservations with keyed identifiers and canonical IPv4/IPv6. No quota refund on provider failure; no plaintext identifiers in rate tables. Local checks pass: 38 tests pass / 3 PostgreSQL-only skips. One new real PostgreSQL quota race test awaits CI. Full provider delivery is still unavailable.
+
 ## F01.01 durable challenge persistence
 
 Added migration 002, keyed challenge/mobile digests, secure code generation, explicit policy, serialized resend, persisted attempts, expiry after lock acquisition and one-time consume with transactional continuation. No plaintext phone/code in database, no HTTP OTP success endpoint, no role creation. Local `npm run check` passes: docs and all workspace typechecks; 36 tests pass with two PostgreSQL-only tests explicitly skipped. Published source commit 2407d47 passed [GitHub Actions run 35736511346](https://github.com/manojjangid1440/kbs-dsa-platform-20260922/actions/runs/35736511346): 38 pass / 0 fail / 0 skipped, including concurrent consume/resend and expiry after row-lock wait on PostgreSQL 17, plus clean install and production web build. F01.01 is complete as an internal persistence task; full F01 remains incomplete. Local server installation was unavailable due container permissions; the real-PostgreSQL evidence comes from CI.

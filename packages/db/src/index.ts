@@ -9,5 +9,15 @@ export const otpMigrationUrl = new URL(
   import.meta.url,
 );
 export { OtpChallenges } from "./otp-challenges.ts";
+export const rateMigrationUrl = new URL(
+  "../migrations/003_otp_rate_limits.sql",
+  import.meta.url,
+);
+export { OtpRateLimits } from "./otp-rate-limits.ts";
+export const migrationUrls = [
+  coreMigrationUrl,
+  otpMigrationUrl,
+  rateMigrationUrl,
+];
 export { postgresDatabase } from "./transaction.ts";
 export type { SqlTransaction, TransactionalDatabase } from "./transaction.ts";

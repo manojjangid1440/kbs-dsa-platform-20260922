@@ -1,5 +1,9 @@
 # Session log
 
+## 2026-09-22 F01.02a request limits
+
+Implemented migration 003 and exact rolling-window admission under three ordered scope locks. Scope keys are keyed hashes; IPv4-mapped IPv6 and equivalent IPv6 spellings cannot split IP quotas. Denials do not partially charge scopes. Local full check: 38 pass / 3 PostgreSQL-only skips; one new concurrent quota test is wired into CI. Next: F01.03 sessions. No live messages or assumed policy defaults.
+
 ## 2026-09-22 F01.01 verified handoff
 
 Source commit 2407d47 passed GitHub Actions run 35736511346: clean install, source/document integrity, shared/web/native typechecks, all 38 tests with zero skips, and web production build. Downloaded job logs confirm both real PostgreSQL race tests passed. Marked F01.01 complete and split the next task F01.02a for persistent request throttles. Full OTP delivery/session/login/UI flows and F02–F21 remain incomplete; original business/provider decisions remain open. Canonical private GitHub remote and all small commits are published. Next chat starts from NEXT.md; no chat-memory dependency.
