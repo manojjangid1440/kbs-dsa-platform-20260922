@@ -45,3 +45,7 @@ Clean npm ci succeeded; Prettier formatting and strict checks passed. Added Radi
 ## C08.01 return safe server errors without leaking sensitive details
 
 New API error-boundary test confirms unexpected failures return 500 without sensitive error text; complete suite now 32 passing tests and all workspace typechecks pass.
+
+## C09 add shadcn web and native Android foundation previews
+
+Web production build passed. Native TypeScript passed and Expo exported Android Hermes bundle (656 modules). Web includes searchable/filterable synthetic lead examples and accessible Radix dialog; native has three preview tabs. Browser visual QA blocked by failed browser download; no APK/device or completed role journeys claimed.
