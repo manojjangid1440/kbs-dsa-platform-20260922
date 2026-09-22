@@ -29,3 +29,7 @@ Seven MIS tests passed: separate fields, exact bank references, leading zeros, c
 ## C06 guard entitlement reservations approvals and external settlement
 
 Six payout tests passed with synthetic policy only: no inferred activation, own unique reservation, independent approvers, current evidence, full amount, proof and repeat-payment denial. Pure transitions are not a concurrency-safe production ledger; real PostgreSQL transactions still required.
+
+## C07 add relational evidence and financial uniqueness constraints
+
+Migration executed successfully in PGlite; constraint test covers one active Admin, exact references, unique reservations, distinct approver actor, duplicate request/transfer/payment event rejection. No real PostgreSQL multi-connection race test or production repository is claimed.
