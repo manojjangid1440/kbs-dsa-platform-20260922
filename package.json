@@ -1,0 +1,31 @@
+{
+  "name": "kbs-dsa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "packageManager": "npm@11.9.0",
+  "scripts": {
+    "dev:web": "npm run dev --workspace @kbs/web",
+    "dev:api": "npm run dev --workspace @kbs/api",
+    "dev:mobile": "npm run start --workspace @kbs/mobile",
+    "typecheck": "tsc --noEmit && npm run typecheck --workspace @kbs/web && npm run typecheck --workspace @kbs/mobile",
+    "test": "tsx --test packages/*/test/*.test.ts apps/*/test/*.test.ts",
+    "docs:check": "node scripts/check-docs.mjs",
+    "check": "npm run docs:check && npm run typecheck && npm test",
+    "build:web": "npm run build --workspace @kbs/web"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tsx": "4.20.6",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2"
+  }
+}

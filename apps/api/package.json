@@ -1,0 +1,16 @@
+{
+  "name": "@kbs/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts"
+  },
+  "dependencies": {
+    "@kbs/contracts": "*",
+    "@kbs/config": "*",
+    "@kbs/domain": "*",
+    "fastify": "5.12.5"
+  }
+}
