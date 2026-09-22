@@ -41,3 +41,7 @@ API injection tests passed: liveness 200, readiness 503, forged role/token denie
 ## C01.01 format core sources and lock UI accessibility dependencies
 
 Clean npm ci succeeded; Prettier formatting and strict checks passed. Added Radix-backed Dialog dependency for accessible focus and dismissal behavior in the upcoming web shell.
+
+## C08.01 return safe server errors without leaking sensitive details
+
+New API error-boundary test confirms unexpected failures return 500 without sensitive error text; complete suite now 32 passing tests and all workspace typechecks pass.
