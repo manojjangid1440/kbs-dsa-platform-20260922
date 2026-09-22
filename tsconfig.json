@@ -12,9 +12,7 @@
     "jsx": "react-jsx",
     "noEmit": true,
     "allowImportingTsExtensions": true,
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
   "include": [
     "packages/**/*.ts",
@@ -22,7 +20,5 @@
     "apps/api/**/*.ts",
     "apps/worker/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

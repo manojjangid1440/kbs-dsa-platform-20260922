@@ -19,13 +19,16 @@
     "test": "node --import tsx --test packages/*/test/*.test.ts apps/*/test/*.test.ts",
     "docs:check": "node scripts/check-docs.mjs",
     "check": "npm run docs:check && npm run typecheck && npm test",
-    "build:web": "npm run build --workspace @kbs/web"
+    "build:web": "npm run build --workspace @kbs/web",
+    "format:check": "prettier --check \"apps/**/*.{ts,tsx,json,css,mjs}\" \"packages/**/*.{ts,tsx,json}\" package.json tsconfig.json",
+    "format": "prettier --write \"apps/**/*.{ts,tsx,json,css,mjs}\" \"packages/**/*.{ts,tsx,json}\" package.json tsconfig.json"
   },
   "devDependencies": {
-    "typescript": "5.9.3",
-    "tsx": "4.20.6",
     "@types/node": "24.10.1",
     "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.2"
+    "@types/react-dom": "19.2.2",
+    "prettier": "3.6.2",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
   }
 }

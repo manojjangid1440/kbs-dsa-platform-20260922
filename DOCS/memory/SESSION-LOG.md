@@ -19,3 +19,5 @@ Read entire supplied PRD (638 nonempty paragraphs/table rows; about 15,166 words
 - C07: add relational evidence and financial uniqueness constraints. Evidence: Migration executed successfully in PGlite; constraint test covers one active Admin, exact references, unique reservations, distinct approver actor, duplicate request/transfer/payment event rejection. No real PostgreSQL multi-connection race test or production repository is claimed.
 
 - C08: add truthful API readiness and guarded worker boundaries. Evidence: API injection tests passed: liveness 200, readiness 503, forged role/token denied, strict OTP request returns unavailable without PII. Worker test rejects unconfigured jobs. Full suite now 31 passing tests; no real HTTP listener or durable job handlers claimed.
+
+- C01.01: format core sources and lock UI accessibility dependencies. Evidence: Clean npm ci succeeded; Prettier formatting and strict checks passed. Added Radix-backed Dialog dependency for accessible focus and dismissal behavior in the upcoming web shell.

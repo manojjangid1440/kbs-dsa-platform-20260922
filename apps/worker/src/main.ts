@@ -1,4 +1,6 @@
-import {readConfig} from '@kbs/config';
+import { readConfig } from "@kbs/config";
 readConfig(process.env);
-console.error('Worker foundation only: durable queue and handlers are not configured. No jobs consumed.');
-process.exitCode=1;
+console.error(
+  "Worker foundation only: durable queue and handlers are not configured. No jobs consumed.",
+);
+process.exitCode = 1;

@@ -37,3 +37,7 @@ Migration executed successfully in PGlite; constraint test covers one active Adm
 ## C08 add truthful API readiness and guarded worker boundaries
 
 API injection tests passed: liveness 200, readiness 503, forged role/token denied, strict OTP request returns unavailable without PII. Worker test rejects unconfigured jobs. Full suite now 31 passing tests; no real HTTP listener or durable job handlers claimed.
+
+## C01.01 format core sources and lock UI accessibility dependencies
+
+Clean npm ci succeeded; Prettier formatting and strict checks passed. Added Radix-backed Dialog dependency for accessible focus and dismissal behavior in the upcoming web shell.
