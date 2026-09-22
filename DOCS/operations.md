@@ -25,3 +25,7 @@ Structured request/job/correlation IDs and safe error codes; counters for unmatc
 ## Remote repository
 
 This task creates a fresh local Git repository with full incremental history. It does not reuse any existing repository. If remote creation/push capability is unavailable, preserve `.git` in the deliverable archive and record that no remote publication occurred. Never claim a GitHub URL without successful creation and push. Use a newly authorized private destination when available, then `git remote add origin <new-url>` and `git push -u origin main`; do not overwrite an existing remote project.
+
+## Environment verification notes
+
+Use `node --import tsx` rather than the tsx CLI here; CLI IPC pipe creation failed in this environment. npm scripts already use the working form. The current browser binary download failed, so visual/browser tests are unverified. Expo Android Hermes export succeeded with the SDK-bundled React Native version; signed APK and device testing still require Android build resources.

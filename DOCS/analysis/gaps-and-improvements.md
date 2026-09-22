@@ -67,6 +67,10 @@ The supplied PRD already calls out important policy gaps. This analysis retains 
 | E25 | Keep production readiness machine-readable | Missing provider/policy must fail startup or dependent operation; health does not imply functional readiness |
 | E26 | Protect declared event identity across reissued/replaced cards | Do not assume one lead equals one lifetime commission event; approved bank event identity needed |
 
+## Source formatting issue
+
+The second partner URL in section 7.5 runs directly into explanatory text in the extracted source (`...KBS_50263These...`). Do not seed a URL copied from that whole paragraph. Bank operations must confirm the exact approved URL, including query/fragment, before catalogue publication. The original source is retained unchanged for traceability.
+
 ## Better sequencing
 
 Build pure contracts, policy gates, audit envelopes and domain invariants first. Then migrations, real OTP/session and object authorization, private uploads and job/outbox infrastructure. Only then implement training/queue, catalogue/onboarding, lead creation, MIS staging, financial ledger, provider calling and dashboards. UI design tokens and role shells can proceed after shared core, but dashboard numbers remain synthetic until wired to authorized projections.

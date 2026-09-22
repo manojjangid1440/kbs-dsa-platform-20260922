@@ -1,10 +1,40 @@
 # Current implementation status
 
-As of 2026-09-22: documentation baseline complete; initial core implementation in progress (see completed tasks below).
+As of 2026-09-22: documentation-first monorepo and initial shared core complete. Full business application is NOT complete or production-ready.
 
-Complete: entire PRD read; source and hash preserved; 31 detailed sections; 22 feature packages; 10 initial core tasks; full acceptance/open decisions; architecture, API, data/security/UX/integration/operation contracts; traceability and handoff instructions.
+## What exists
 
-Next: execute C01–C10 in separate commits. Full product features F01–F21 remain planned. No provider selected, no workbook fixtures inspected, no live service, no Android APK, no production deployment and no remote repository publication claimed.
+- Full PRD reviewed and preserved: original DOCX, hash, all 638 body paragraphs/table rows, 31 complete requirement sections, 29-screen FOS coverage, exact HDFC headings and all referenced sourcing-bank schemas.
+- 83 product/repository Markdown documents, including 22 feature packages, ten core tasks, detailed gap analysis, decisions, data/API/security/UX contracts, original acceptance matrix and session memory. One additional UI package README documents its source-component setup.
+- Four app workspaces: Next.js web, Expo React Native Android, Fastify API, worker boundary. Seven shared packages: contracts, domain, config, database, integrations, UI and tokens.
+- Runtime schemas, conservative config, access rules, training clock/order/reactivation primitives, exact MIS reference matching/raw-value/blank/replay/stale-source rules, payout eligibility/reservation/dual-approval/external-payment pure transitions.
+- PostgreSQL schema baseline with relational source links and financial uniqueness constraints. Production repository transactions remain pending.
+- Web and native synthetic preview shells. API liveness, honest unavailable readiness, strict unavailable OTP boundary and denied protected routes. Worker explicitly refuses unconfigured jobs.
+- Local Git history, author Manoj Jangid, with the documentation committed before application source. No existing repository consulted.
+
+## Verification actually executed
+
+| Check | Result | Scope and limit |
+| --- | --- | --- |
+| Clean `npm ci --no-audit --no-fund` | Passed | Committed lockfile reproducible here |
+| `npm run check` | Passed | Documentation integrity, strict shared/web/native typechecks and 32 tests |
+| `npm run format:check` | Passed | Source formatting; API fix also formatted afterward |
+| Source integrity | Passed | 638 sequential paragraph IDs, original DOCX hash and Markdown links |
+| Database migration | Passed in PGlite | PostgreSQL-compatible syntax/constraints; not real multi-connection transaction races |
+| `npm run build:web` | Passed | Next.js optimized production build; synthetic shell only |
+| Expo Android export | Passed | Hermes bundle, 656 modules; not signed APK or device testing |
+| Browser visual/interactivity QA | Not executed | Chromium download failed with invalid/truncated archives |
+| Remote CI / GitHub push | Not executed | No remote repository created or configured |
+
+No live OTP, identity verification, customer calls, WhatsApp delivery, real workbook import, financial transfer or deployment was performed. No hidden production demo authentication exists. Production API startup deliberately fails until real implementation is ready.
+
+## Remaining implementation
+
+F01–F21 remain incomplete end-to-end. Shared pure functions do not replace persistent workflows. Next work starts with durable OTP/session and object authorization (F01/F02), then private file scanning/outbox (F05). Implement source-backed business flows in dependency order after those foundations.
+
+Launch gaps: exact issuer reference capture; approved MIS snapshot/delta/blank/order semantics; signed commission trigger/rates/event identity; independent Manager route for Admin-direct Advisors; training policy; approved purchased-list/communications and identity providers; actual workbook fixtures; approved catalogue/sourcing; capacity/retention and real PostgreSQL races; Android APK/device and browser QA. See release-gates.md and decisions/open-decisions.md.
+
+## Task-level evidence
 
 ## C01 establish fresh typed workspace tooling and CI
 

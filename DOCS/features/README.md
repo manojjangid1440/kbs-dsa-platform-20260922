@@ -1,6 +1,6 @@
 # Small feature work packages
 
-Read full linked requirements before each task. All end-to-end features begin PLANNED. Shared-core progress is tracked separately in [foundation-tasks.md](foundation-tasks.md). Complete each numbered task in a separate commit; split further when needed.
+Read full linked requirements before each task. F00 is implemented as a verified initial core. F01–F21 remain PLANNED end-to-end; shared primitives are listed in memory/STATUS.md. Shared-core progress is tracked separately in [foundation-tasks.md](foundation-tasks.md). Complete each numbered task in a separate commit; split further when needed.
 
 | Feature | Dependencies | Tasks |
 | --- | --- | --- |
