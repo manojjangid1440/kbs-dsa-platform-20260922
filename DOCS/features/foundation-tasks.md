@@ -3,7 +3,7 @@
 These are deliberately smaller than full product features. Each task is an independent commit after the complete docs baseline. Task results and evidence belong in memory/STATUS.md.
 
 - [x] C01 — Workspace tooling, exact dependencies, check orchestration and CI.
-- [ ] C02 — Strict shared contracts and environment/provider readiness.
+- [x] C02 — Strict shared contracts and environment/provider readiness.
 - [ ] C03 — Server-side role scope and Telecaller prerequisite policy core.
 - [ ] C04 — Sequential training and 72-hour deadline core.
 - [ ] C05 — MIS raw fields, exact reference matching and safe update semantics.

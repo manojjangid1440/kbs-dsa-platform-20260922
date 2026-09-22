@@ -9,3 +9,7 @@ Next: execute C01–C10 in separate commits. Full product features F01–F21 rem
 ## C01 establish fresh typed workspace tooling and CI
 
 npm install succeeded with locked dependencies; docs check validated all 638 paragraphs and 83 Markdown files. Expo native version resolved from its bundled compatibility manifest. CI configuration added; remote CI not run.
+
+## C02 add strict contracts and fail-closed configuration
+
+Contract/config tests passed; invalid privileged fields, malformed references, duplicate selections and production startup are rejected. Test runner uses node --import tsx because CLI IPC is restricted in this environment. Provider ports return unavailable, not simulated success.

@@ -16,7 +16,7 @@
     "dev:api": "npm run dev --workspace @kbs/api",
     "dev:mobile": "npm run start --workspace @kbs/mobile",
     "typecheck": "tsc --noEmit && npm run typecheck --workspace @kbs/web && npm run typecheck --workspace @kbs/mobile",
-    "test": "tsx --test packages/*/test/*.test.ts apps/*/test/*.test.ts",
+    "test": "node --import tsx --test packages/*/test/*.test.ts apps/*/test/*.test.ts",
     "docs:check": "node scripts/check-docs.mjs",
     "check": "npm run docs:check && npm run typecheck && npm test",
     "build:web": "npm run build --workspace @kbs/web"
