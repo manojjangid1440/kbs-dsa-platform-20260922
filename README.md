@@ -35,4 +35,4 @@ To build the web app: `npm run build:web`. To verify the native bundle: `cd apps
 
 Give the next agent this repository and say: “Read AGENTS.md and DOCS/START-HERE.md, inspect the current Git status and DOCS/memory files, then continue the first unblocked task from DOCS/memory/NEXT.md. Commit each completed small task.”
 
-The delivered archive includes the local `.git` history. Unzip with hidden files preserved to keep all commits. No existing repository was used and no remote repository was created or pushed.
+The canonical private repository is [manojjangid1440/kbs-dsa-platform-20260922](https://github.com/manojjangid1440/kbs-dsa-platform-20260922). It was created fresh; see [the publication record](DOCS/memory/GITHUB.md) for history and CI evidence. The earlier archive remains a snapshot of the original local core history.

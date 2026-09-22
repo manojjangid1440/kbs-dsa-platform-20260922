@@ -10,7 +10,7 @@ As of 2026-09-22: documentation-first monorepo and initial shared core complete.
 - Runtime schemas, conservative config, access rules, training clock/order/reactivation primitives, exact MIS reference matching/raw-value/blank/replay/stale-source rules, payout eligibility/reservation/dual-approval/external-payment pure transitions.
 - PostgreSQL schema baseline with relational source links and financial uniqueness constraints. Production repository transactions remain pending.
 - Web and native synthetic preview shells. API liveness, honest unavailable readiness, strict unavailable OTP boundary and denied protected routes. Worker explicitly refuses unconfigured jobs.
-- Local Git history, author Manoj Jangid, with the documentation committed before application source. No existing repository consulted.
+- Fresh private GitHub repository [kbs-dsa-platform-20260922](https://github.com/manojjangid1440/kbs-dsa-platform-20260922); all 15 initial tasks published separately with identical file trees. Documentation precedes source in history. No existing repository consulted. See [publication record](GITHUB.md) for commit mapping.
 
 ## Verification actually executed
 
@@ -24,7 +24,7 @@ As of 2026-09-22: documentation-first monorepo and initial shared core complete.
 | `npm run build:web` | Passed | Next.js optimized production build; synthetic shell only |
 | Expo Android export | Passed | Hermes bundle, 656 modules; not signed APK or device testing |
 | Browser visual/interactivity QA | Not executed | Chromium download failed with invalid/truncated archives |
-| Remote CI / GitHub push | Not executed | No remote repository created or configured |
+| Remote CI / GitHub publication | Passed | Initial head 7c3cf76; GitHub Actions run 35735652957 passed install, checks, 32 tests and web build |
 
 No live OTP, identity verification, customer calls, WhatsApp delivery, real workbook import, financial transfer or deployment was performed. No hidden production demo authentication exists. Production API startup deliberately fails until real implementation is ready.
 

@@ -16,7 +16,7 @@
 - Pure payout transition functions require transactional repository row locks. Do not expose them as mutable in-memory HTTP endpoints.
 - MIS rule helpers do not parse Excel. The three actual workbook files were not attached to this task; do not claim fixture import coverage.
 - Browser visual QA remains outstanding because Chromium installation failed. Android bundle export passed, but APK signing/secure-screen/device tests remain outstanding.
-- No remote is configured. Archive includes complete local `.git`; preserve it when extracting. Any future push must target a fresh authorized repository, not an earlier project.
+- Canonical private remote is https://github.com/manojjangid1440/kbs-dsa-platform-20260922; main tracks origin/main. Initial GitHub CI passed. See [GITHUB.md](GITHUB.md) for initial commit mapping. Fetch current state before publishing; do not force-push.
 
 ## Each task ending
 
