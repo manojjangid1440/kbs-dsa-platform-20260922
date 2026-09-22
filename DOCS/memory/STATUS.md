@@ -25,3 +25,7 @@ Four training tests passed, including exact 72-hour boundary, no login reset, se
 ## C05 preserve MIS evidence and reject ambiguous or stale matches
 
 Seven MIS tests passed: separate fields, exact bank references, leading zeros, conflicting aliases, replay, unchanged confirmation, explicit blank handling and stale source review. This is pure core; Excel parsing, transactional publication and real workbook QA remain pending.
+
+## C06 guard entitlement reservations approvals and external settlement
+
+Six payout tests passed with synthetic policy only: no inferred activation, own unique reservation, independent approvers, current evidence, full amount, proof and repeat-payment denial. Pure transitions are not a concurrency-safe production ledger; real PostgreSQL transactions still required.

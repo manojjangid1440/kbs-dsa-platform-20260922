@@ -7,7 +7,7 @@ These are deliberately smaller than full product features. Each task is an indep
 - [x] C03 — Server-side role scope and Telecaller prerequisite policy core.
 - [x] C04 — Sequential training and 72-hour deadline core.
 - [x] C05 — MIS raw fields, exact reference matching and safe update semantics.
-- [ ] C06 — Payout eligibility, reservation and dual-approval/payment transition core.
+- [x] C06 — Payout eligibility, reservation and dual-approval/payment transition core.
 - [ ] C07 — PostgreSQL baseline and constraint smoke tests.
 - [ ] C08 — API and worker foundation with health/readiness and denied protected routes.
 - [ ] C09 — Shared tokens, shadcn web and native Android foundation shells.
