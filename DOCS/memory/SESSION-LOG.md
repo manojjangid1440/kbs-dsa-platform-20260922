@@ -7,3 +7,5 @@ Read entire supplied PRD (638 nonempty paragraphs/table rows; about 15,166 words
 - C01: establish fresh typed workspace tooling and CI. Evidence: npm install succeeded with locked dependencies; docs check validated all 638 paragraphs and 83 Markdown files. Expo native version resolved from its bundled compatibility manifest. CI configuration added; remote CI not run.
 
 - C02: add strict contracts and fail-closed configuration. Evidence: Contract/config tests passed; invalid privileged fields, malformed references, duplicate selections and production startup are rejected. Test runner uses node --import tsx because CLI IPC is restricted in this environment. Provider ports return unavailable, not simulated success.
+
+- C03: enforce scoped roles and Telecaller access prerequisites. Evidence: Four access tests passed: cross-organization/owner denial, Manager scope, Advisor offsite behavior and WFH expiry/revocation. Pure trusted-context policy only; real sessions and scoped database queries remain F01/F02.
