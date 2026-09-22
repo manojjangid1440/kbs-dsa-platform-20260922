@@ -5,7 +5,7 @@ As of 2026-09-22: documentation-first monorepo and initial shared core complete.
 ## What exists
 
 - Full PRD reviewed and preserved: original DOCX, hash, all 638 body paragraphs/table rows, 31 complete requirement sections, 29-screen FOS coverage, exact HDFC headings and all referenced sourcing-bank schemas.
-- 83 product/repository Markdown documents, including 22 feature packages, ten core tasks, detailed gap analysis, decisions, data/API/security/UX contracts, original acceptance matrix and session memory. One additional UI package README documents its source-component setup.
+- 84 product/repository Markdown documents, including 22 feature packages, ten core tasks, detailed gap analysis, decisions, data/API/security/UX contracts, original acceptance matrix and session memory. One additional UI package README documents its source-component setup.
 - Four app workspaces: Next.js web, Expo React Native Android, Fastify API, worker boundary. Seven shared packages: contracts, domain, config, database, integrations, UI and tokens.
 - Runtime schemas, conservative config, access rules, training clock/order/reactivation primitives, exact MIS reference matching/raw-value/blank/replay/stale-source rules, payout eligibility/reservation/dual-approval/external-payment pure transitions.
 - PostgreSQL schema baseline with relational source links and financial uniqueness constraints. Production repository transactions remain pending.
@@ -30,11 +30,15 @@ No live OTP, identity verification, customer calls, WhatsApp delivery, real work
 
 ## Remaining implementation
 
-F01–F21 remain incomplete end-to-end. Shared pure functions do not replace persistent workflows. Next work starts with durable OTP/session and object authorization (F01/F02), then private file scanning/outbox (F05). Implement source-backed business flows in dependency order after those foundations.
+F01–F21 remain incomplete end-to-end. F01.01 now has an internal PostgreSQL challenge repository and connection-pinned transactions; session issuance, approved provider delivery, request throttles and object authorization remain incomplete. Next work continues F01/F02, then private file scanning/outbox (F05). Implement source-backed business flows in dependency order after those foundations.
 
 Launch gaps: exact issuer reference capture; approved MIS snapshot/delta/blank/order semantics; signed commission trigger/rates/event identity; independent Manager route for Admin-direct Advisors; training policy; approved purchased-list/communications and identity providers; actual workbook fixtures; approved catalogue/sourcing; capacity/retention and real PostgreSQL races; Android APK/device and browser QA. See release-gates.md and decisions/open-decisions.md.
 
 ## Task-level evidence
+
+## F01.01 durable challenge persistence
+
+Added migration 002, keyed challenge/mobile digests, secure code generation, explicit policy, serialized resend, persisted attempts, expiry after lock acquisition and one-time consume with transactional continuation. No plaintext phone/code in database, no HTTP OTP success endpoint, no role creation. Local `npm run check` passes: docs and all workspace typechecks; 36 tests pass with two PostgreSQL-only tests explicitly skipped. PostgreSQL 17 CI service added to execute both race cases; that remote gate is pending. Local server installation was unavailable due container permissions; no local real-PostgreSQL result is claimed.
 
 ## C01 establish fresh typed workspace tooling and CI
 

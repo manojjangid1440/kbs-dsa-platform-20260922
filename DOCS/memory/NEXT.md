@@ -5,9 +5,9 @@
 1. Read root AGENTS.md, DOCS/START-HERE.md and memory/STATUS.md. Inspect `git status --short` and `git log --oneline -16`. Do not rebuild the repository or re-analyze the original PRD from scratch.
 2. Run `npm ci` and `npm run check` using Node 24. Last verified result: 32 passing tests; all shared/web/native typechecks pass. A browser binary is not included.
 3. Read F01.md/F02.md, full requirement sections 3–4 and 21, contracts/api.md, security.md and data-model.md.
-4. First implement **F01.01: durable OTP challenge/session persistence** in a new migration and trusted service boundary. Include hashed challenge/token, atomic one-time consume, expiry/attempt counters and revocation. Existing API has no authenticated data routes. Do not replace this with header-role authentication or a fixed OTP.
-5. Implement meaningful replay/expiry/rate-limit/session-revocation and wrong-object tests with real database transactions. Commit that small task before the provider/UI task.
-6. F01.02 needs approved OTP provider/policy. Until supplied, keep live OTP unavailable. Continue unblocked F02 scoped repository queries and F05 private-file/job persistence with provider interfaces; never claim an unavailable adapter works.
+4. F01.01 persistence is implemented in migration 002 and packages/db/src/otp-challenges.ts. Verify the latest GitHub Actions PostgreSQL concurrency gate before marking its checkbox complete. Four added local tests pass; two race tests need TEST_DATABASE_URL and are wired into CI.
+5. Next unblocked slice: **F01.02a durable phone/IP/device throttling**, then **F01.03 server sessions**. Sessions must be issued inside the OTP consume continuation, use hashed unpredictable tokens, re-read active account/role, expire/revoke/rotate atomically and retain first-login evidence for training. Do not wire an OTP HTTP success flow before provider, request limits, trusted organization resolution and session transport/CSRF are ready.
+6. F01.02 delivery needs approved OTP provider/policy. Until supplied, keep live OTP unavailable. F02 scoped repository queries and F05 private-file/job persistence can follow their declared dependencies; never claim an unavailable adapter works.
 
 ## Important actual state
 

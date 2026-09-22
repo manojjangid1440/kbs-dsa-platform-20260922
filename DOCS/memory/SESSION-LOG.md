@@ -1,5 +1,9 @@
 # Session log
 
+## 2026-09-22 F01.01 OTP persistence
+
+Read complete authentication, role, privacy and recovery requirements before source changes; documented acceptance first. Implemented internal challenge persistence and PostgreSQL transaction adapter, migration 002 and six new tests (four pass locally, two need real PostgreSQL). Complete local check passes with 36 pass / 2 explicitly skipped. Added a PostgreSQL 17 CI service for concurrent consume/resend and expiry after lock-wait. API remains unavailable for live OTP; provider, throttles, sessions and role routing remain pending. No business policy defaults or external customer messages were introduced. References: node-postgres transaction guidance https://node-postgres.com/features/transactions and PostgreSQL row locking https://www.postgresql.org/docs/17/explicit-locking.html.
+
 ## 2026-09-22 C11 fresh GitHub publication
 
 Created new private repository manojjangid1440/kbs-dsa-platform-20260922 after checking availability. Replayed all 15 local task commits through the authenticated connector; every tree matches exactly. Preserved original local history and mapped SHAs in GITHUB.md. Initial GitHub Actions run 35735652957 passed. User explicitly authorized repository creation and publication. No production deployment performed.

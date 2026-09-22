@@ -42,4 +42,6 @@ FileAsset has purpose, size/type/hash, private key, scan state, access policy, r
 
 ## Required indexes and migrations
 
+F01.01 adds `otp_subjects` as a durable lock row scoped by organization, keyed mobile hash and purpose, plus `otp_challenges` with digest, issued/expiry/consumed/revoked instants and bounded attempts. A partial unique index permits at most one unconsumed, unrevoked challenge per scope; resend revokes its predecessor even if expired. Subject lock rows contain no raw phone or code. Retention and key rotation need an approved policy before activation. Database transactions pin a single connection and roll back on any continuation failure. Migration tests use isolated databases/schemas, never production data.
+
 Index organization and record owner on scoped lists; bank/reference uniqueness; bank/batch hash; batch/row; lead/history time; owner+createdAt pagination; due followups; request status+submittedAt; outbox nextAttemptAt. Partial unique active Admin per organization. Foreign keys preserve links to immutable evidence. New migrations are forward-only; back up and rehearse restoration before production. No seed with real PII or assumed commercial rates.
