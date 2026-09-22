@@ -17,14 +17,14 @@ As of 2026-09-22: documentation-first monorepo and initial shared core complete.
 | Check | Result | Scope and limit |
 | --- | --- | --- |
 | Clean `npm ci --no-audit --no-fund` | Passed | Committed lockfile reproducible here |
-| `npm run check` | Passed | Documentation integrity, strict shared/web/native typechecks and 32 tests |
+| `npm run check` | Passed | 84-document integrity and strict shared/web/native typechecks; local 36 pass / 2 PostgreSQL-only skips; remote PostgreSQL CI 38 pass / 0 skips |
 | `npm run format:check` | Passed | Source formatting; API fix also formatted afterward |
 | Source integrity | Passed | 638 sequential paragraph IDs, original DOCX hash and Markdown links |
-| Database migration | Passed in PGlite | PostgreSQL-compatible syntax/constraints; not real multi-connection transaction races |
+| Database migrations | Passed in PGlite and PostgreSQL 17 CI | Both migrations applied; OTP consume/resend and expiry-after-lock-wait races passed. Financial transaction races remain pending |
 | `npm run build:web` | Passed | Next.js optimized production build; synthetic shell only |
 | Expo Android export | Passed | Hermes bundle, 656 modules; not signed APK or device testing |
 | Browser visual/interactivity QA | Not executed | Chromium download failed with invalid/truncated archives |
-| Remote CI / GitHub publication | Passed | Initial head 7c3cf76; GitHub Actions run 35735652957 passed install, checks, 32 tests and web build |
+| Remote CI / GitHub publication | Passed | Source head 2407d47; run 35736511346 passed install, checks, all 38 tests including PostgreSQL races, and web build |
 
 No live OTP, identity verification, customer calls, WhatsApp delivery, real workbook import, financial transfer or deployment was performed. No hidden production demo authentication exists. Production API startup deliberately fails until real implementation is ready.
 
@@ -38,7 +38,7 @@ Launch gaps: exact issuer reference capture; approved MIS snapshot/delta/blank/o
 
 ## F01.01 durable challenge persistence
 
-Added migration 002, keyed challenge/mobile digests, secure code generation, explicit policy, serialized resend, persisted attempts, expiry after lock acquisition and one-time consume with transactional continuation. No plaintext phone/code in database, no HTTP OTP success endpoint, no role creation. Local `npm run check` passes: docs and all workspace typechecks; 36 tests pass with two PostgreSQL-only tests explicitly skipped. PostgreSQL 17 CI service added to execute both race cases; that remote gate is pending. Local server installation was unavailable due container permissions; no local real-PostgreSQL result is claimed.
+Added migration 002, keyed challenge/mobile digests, secure code generation, explicit policy, serialized resend, persisted attempts, expiry after lock acquisition and one-time consume with transactional continuation. No plaintext phone/code in database, no HTTP OTP success endpoint, no role creation. Local `npm run check` passes: docs and all workspace typechecks; 36 tests pass with two PostgreSQL-only tests explicitly skipped. Published source commit 2407d47 passed [GitHub Actions run 35736511346](https://github.com/manojjangid1440/kbs-dsa-platform-20260922/actions/runs/35736511346): 38 pass / 0 fail / 0 skipped, including concurrent consume/resend and expiry after row-lock wait on PostgreSQL 17, plus clean install and production web build. F01.01 is complete as an internal persistence task; full F01 remains incomplete. Local server installation was unavailable due container permissions; the real-PostgreSQL evidence comes from CI.
 
 ## C01 establish fresh typed workspace tooling and CI
 

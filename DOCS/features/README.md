@@ -1,11 +1,11 @@
 # Small feature work packages
 
-Read full linked requirements before each task. F00 is implemented as a verified initial core. F01–F21 remain PLANNED end-to-end; shared primitives are listed in memory/STATUS.md. Shared-core progress is tracked separately in [foundation-tasks.md](foundation-tasks.md). Complete each numbered task in a separate commit; split further when needed.
+Read full linked requirements before each task. F00 is implemented as a verified initial core. F01 is IN PROGRESS with challenge persistence verified; F02–F21 remain PLANNED end-to-end. Shared primitives are listed in memory/STATUS.md. Shared-core progress is tracked separately in [foundation-tasks.md](foundation-tasks.md). Complete each numbered task in a separate commit; split further when needed.
 
 | Feature | Dependencies | Tasks |
 | --- | --- | --- |
 | [F00 Repository and shared core](F00.md) | No dependencies | 5 |
-| [F01 OTP sessions and account lifecycle](F01.md) | F00; approved OTP/session/recovery policy | 4 |
+| [F01 OTP sessions and account lifecycle](F01.md) | F00; approved OTP/session/recovery policy | 5 |
 | [F02 Authorization hierarchy and sensitive access](F02.md) | F01; attribution and sensitive reveal policy | 4 |
 | [F03 Telecaller creation and official identity](F03.md) | F01 F02; approved ID template/revocation | 3 |
 | [F04 Training curriculum and 72 hour enrollment](F04.md) | F03; approved assessment configuration | 4 |

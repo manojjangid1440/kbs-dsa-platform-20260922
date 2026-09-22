@@ -1,5 +1,9 @@
 # Session log
 
+## 2026-09-22 F01.01 verified handoff
+
+Source commit 2407d47 passed GitHub Actions run 35736511346: clean install, source/document integrity, shared/web/native typechecks, all 38 tests with zero skips, and web production build. Downloaded job logs confirm both real PostgreSQL race tests passed. Marked F01.01 complete and split the next task F01.02a for persistent request throttles. Full OTP delivery/session/login/UI flows and F02–F21 remain incomplete; original business/provider decisions remain open. Canonical private GitHub remote and all small commits are published. Next chat starts from NEXT.md; no chat-memory dependency.
+
 ## 2026-09-22 F01.01 OTP persistence
 
 Read complete authentication, role, privacy and recovery requirements before source changes; documented acceptance first. Implemented internal challenge persistence and PostgreSQL transaction adapter, migration 002 and six new tests (four pass locally, two need real PostgreSQL). Complete local check passes with 36 pass / 2 explicitly skipped. Added a PostgreSQL 17 CI service for concurrent consume/resend and expiry after lock-wait. API remains unavailable for live OTP; provider, throttles, sessions and role routing remain pending. No business policy defaults or external customer messages were introduced. References: node-postgres transaction guidance https://node-postgres.com/features/transactions and PostgreSQL row locking https://www.postgresql.org/docs/17/explicit-locking.html.
