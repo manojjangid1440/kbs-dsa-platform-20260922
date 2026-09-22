@@ -17,3 +17,7 @@ Contract/config tests passed; invalid privileged fields, malformed references, d
 ## C03 enforce scoped roles and Telecaller access prerequisites
 
 Four access tests passed: cross-organization/owner denial, Manager scope, Advisor offsite behavior and WFH expiry/revocation. Pure trusted-context policy only; real sessions and scoped database queries remain F01/F02.
+
+## C04 implement exact training deadline and sequential progress rules
+
+Four training tests passed, including exact 72-hour boundary, no login reset, sequential assessments, preservation of passes and explicit Manager reactivation window. Curriculum/provider/UI and scheduler remain pending.
